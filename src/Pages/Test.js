@@ -5,20 +5,20 @@ import Image3 from '../Images/c-3.jpg'
 import Image4 from '../Images/c-4.jpg'
 import Image5 from '../Images/c-5.jpg'
 import giffy from '../assets/images/welcomegif.gif'
-// import giffy2 from '../assets/images/working gif.gif'
 import Link from '../Images/link.png'
 import Image6 from '../Images/event-img.jpg'
 import {GiTrophyCup} from 'react-icons/gi'
 import {AiOutlineSetting,AiOutlineClockCircle,AiOutlineHeart} from 'react-icons/ai';
 import {BiLaptop} from 'react-icons/bi'
 import {VscFeedback} from 'react-icons/vsc'
-// import { display } from '@material-ui/system'
+import Header from '../Navbar/Header'
 import '../Css/style.css'
 
 
 export default function Test() {
     return (
         <>
+        <Header/>
         <div style={{width:"100%",height:"50%",display:"flex",flexDirection:"row",marginTop:"1.86%"}}>
             <div id="new-head" style={{display:"flex",justifyContent:"center",alignItems:"center",flex:"0.5",fontFamily: "'Anton', sans-serif",
 fontFamily:"'Spartan', sans-serif"}}>Welcome<br></br>    To  XcitEDU</div>

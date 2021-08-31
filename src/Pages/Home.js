@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react'
 import Testimonial from "../Testimonials/Testimonial";
+import Footer from './Footer'
 import Test from './Test'
 
 export default function Home() {
@@ -9,7 +10,7 @@ export default function Home() {
 
         <Test/> 
         <Testimonial/>
-       
+         <Footer/>
         </> 
     )
 }

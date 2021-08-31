@@ -6,6 +6,8 @@ import AllInclusiveIcon from '@material-ui/icons/AllInclusive';
 import GraphicEqIcon from '@material-ui/icons/GraphicEq';
 import LeakAddIcon from '@material-ui/icons/LeakAdd';
 import FlareIcon from '@material-ui/icons/Flare';
+import Header from '../Navbar/Header';
+import Footer from './Footer';
 import SearchIcon from '@material-ui/icons/Search';
 import atomgif from '../assets/images/atomgif.gif'
 const topics=[{name:"Electrostatistics",icon:<OfflineBoltRoundedIcon fontSize="large"></OfflineBoltRoundedIcon>},
@@ -18,6 +20,7 @@ const topics=[{name:"Electrostatistics",icon:<OfflineBoltRoundedIcon fontSize="l
 function OSmodules() {
     return (
        <>
+        <Header/>
          <div className="Maindiv">
              <div className="Header-div">
                  <div className="topic-heading">
@@ -39,6 +42,7 @@ function OSmodules() {
                  <img src={atomgif}></img>
              </div>
              </div>
+             <Footer/>
          </div>
        </>
     )
