@@ -19,37 +19,37 @@ const headersData = [
     href: "/Service",
     icon: (<HomeIcon fontSize="large"/>),
   },
-  {
-    label: "Careers",
-    href: "/Careers",
-    icon: (<HomeIcon fontSize="large"/>),
-  },
+  // {
+  //   label: "Careers",
+  //   href: "/Careers",
+  //   icon: (<HomeIcon fontSize="large"/>),
+  // },
   {
     label: "Open Source Community",
     href: "/OpenSource",
     icon: (<HomeIcon fontSize="large"/>),
   },
-  {
-    label: "Affiliate Marketing",
-    href: "/Marketing",
-    icon: (<HomeIcon fontSize="large"/>),
-  },
-  {
-    label: "Internship",
-    href: "/Internship",
-    icon: (<HomeIcon fontSize="large"/>),
-  },
-  
-  {
-    label: "Research Prospects",
-    href: "/Research",
-    icon: (<HomeIcon fontSize="large"/>),
-  },
   // {
-  //   label: "Login",
-  //   href: "/Login",
-  //   icon: (<AccountCircleIcon fontSize="large"/>),
+  //   label: "Affiliate Marketing",
+  //   href: "/Marketing",
+  //   icon: (<HomeIcon fontSize="large"/>),
   // },
+  // {
+  //   label: "Internship",
+  //   href: "/Internship",
+  //   icon: (<HomeIcon fontSize="large"/>),
+  // },
+  
+  // {
+  //   label: "Research Prospects",
+  //   href: "/Research",
+  //   icon: (<HomeIcon fontSize="large"/>),
+  // },
+  {
+    label: "Login",
+    href: "/Login",
+    icon: (<AccountCircleIcon fontSize="large"/>),
+  }
 ];
 
 const useStyles = makeStyles(() => ({
