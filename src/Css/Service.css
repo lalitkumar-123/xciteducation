@@ -162,11 +162,11 @@ svg.MuiSvgIcon-root {
   width: 320px;
   height: 280px;
 }
-.carousel-control-prev-icon,
+/* .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-color: black;
 }
-
+ */
 .container.apply {
   background-color: #62d1c6;
   color: black;
