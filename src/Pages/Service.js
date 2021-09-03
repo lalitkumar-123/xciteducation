@@ -377,7 +377,7 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
 <div class="container apply">
   
     
-        <form >
+        <form className="service-form">
         
           <div class="row wsr">
             <div class="col-lg-12">
