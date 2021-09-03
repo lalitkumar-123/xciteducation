@@ -32,6 +32,10 @@ nav.navbar.nav-underline.solid.black.navbar-expand-lg.navbar-light.fixed-top
     background-color: #0C7D81;
     margin-top: 5vh;
 }
+.noHover:hover{
+    background-color: white;
+}
+
  .m-5 .third-container.st
  {
     padding-bottom: 0;
