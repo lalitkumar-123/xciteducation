@@ -64,6 +64,10 @@ p {
   }
 }
 
+.noHover:hover{
+    background-color: white;
+}
+
 .sthird-container {
   margin: 0;
 
