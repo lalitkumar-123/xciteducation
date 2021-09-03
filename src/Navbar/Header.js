@@ -226,7 +226,7 @@ export default function Header() {
 
   const xciteduLogo = (
     <Typography variant="h6" component="h1" className={logo}>
-      XCITEDU
+      XCITEDUCATION
     </Typography>
   );
 
