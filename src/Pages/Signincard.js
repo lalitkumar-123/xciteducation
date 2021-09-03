@@ -3,6 +3,7 @@ import {FaGoogle, FaLinkedin, FaInstagram} from 'react-icons/fa';
 import {Card} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import axios from "axios"
+import {useHistory} from 'react-router';
 import '../Css/Signincard.css'
 
 export default function Signincard() {
@@ -10,28 +11,29 @@ export default function Signincard() {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [error,setError] = useState("");
+    const history = useHistory();
 
     function signup(e)
     {
       e.preventDefault();
-      console.log(username, email, password);
       let data = {
-        username: username,
-        email: email,
-        password: password,
+        username: username.current.value,
+        email: email.current.value,
+        password: password.current.value,
       }
+      console.log(data);
       axios.post("http://localhost:5000/register", data)
-      .then(response => {
-        console.log("Signed In");
-        setUsername("");
-        setEmail("");
-        setPassword("");
+      .then(res => {
+        console.log(res);
+        localStorage.setItem("username",res.data.username);
+        history.push("/");
       })
       .catch(error => {
         console.log(error);
         setError(error);
       })
     }
+
 
     return (
         <>

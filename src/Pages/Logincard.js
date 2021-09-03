@@ -1,5 +1,6 @@
 import React , {useState} from 'react'
 import {FaGoogle, FaLinkedin, FaInstagram} from 'react-icons/fa';
+import {useHistory} from 'react-router';
 import {Card} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import axios from "axios"
@@ -8,28 +9,28 @@ import '../Css/Signincard.css'
 export default function Logincard() {
     const [password, setPassword] = useState("");
     const [username, setUsername] = useState("");
-    const [email, setEmail] = useState("");
     const [error,setError] = useState("");
+    const history = useHistory();
 
     function login(e)
-    {
-      e.preventDefault();
-      console.log(username, password);
-      let data = {
-        username: username,
-        password: password,
-      }
-      axios.post("http://localhost:5000/login", data)
-      .then(response => {
-        console.log("Logged In");
-        setUsername("");
-        setPassword("");
-      })
-      .catch(error => {
-        console.log(error);
-        setError(error);
-      })
+  {
+    e.preventDefault();
+    console.log(username.current.value, password.current.value);
+    let data = {
+      username: username.current.value,
+      password: password.current.value,
     }
+    axios.post("http://localhost:5000/login", data)
+    .then(res => {
+      console.log(res);
+      localStorage.setItem("username",res.data.username);
+      history.push("/");
+    })
+    .catch(error => {
+      console.log(error);
+      setError(error);
+    })
+  }
 
     return (
         <>

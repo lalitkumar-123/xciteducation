@@ -15,8 +15,8 @@ const headersData = [
     icon: (<AccountCircleIcon fontSize="large"/>),
   },
   {
-    label: "About Us",
-    href: "/Aboutus",
+    label: "Open Source Community",
+    href: "/OpenSource",
     icon: (<HomeIcon fontSize="large"/>),
   },
   {
@@ -25,10 +25,10 @@ const headersData = [
     icon: (<HomeIcon fontSize="large"/>),
   },
   {
-    label: "Open Source Community",
-    href: "/OpenSource",
+    label: "About Us",
+    href: "/Aboutus",
     icon: (<HomeIcon fontSize="large"/>),
-  }
+  },
   // {
   //   label: "Careers",
   //   href: "/Careers",
@@ -151,7 +151,7 @@ export default function Header() {
           //           <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
           //           <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
           //           <NavDropdown.Divider />
-          //           <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+          //           <NavDropdown.Item  style={{zIndex: 999}} href="#action/3.4">Separated link</NavDropdown.Item>
           //         </NavDropdown>
           //       </Nav>
           //     </Navbar.Collapse>

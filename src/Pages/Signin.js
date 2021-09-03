@@ -39,8 +39,10 @@ export default function Signin()
     }
     console.log(data);
     axios.post("http://localhost:5000/register", data)
-    .then(response => {
-      console.log(response);
+    .then(res => {
+      console.log(res);
+      localStorage.setItem("username",res.data.username);
+      history.push("/");
     })
     .catch(error => {
       console.log(error);
@@ -58,7 +60,7 @@ export default function Signin()
     }
     axios.post("http://localhost:5000/login", data)
     .then(res => {
-      console.log(res.data.username);
+      console.log(res);
       localStorage.setItem("username",res.data.username);
       history.push("/");
     })

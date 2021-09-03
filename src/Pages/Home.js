@@ -7,10 +7,9 @@ export default function Home() {
 
     return (
         <> 
-
         <Test/> 
         <Testimonial/>
-         <Footer/>
+        <Footer/>
         </> 
     )
 }
