@@ -106,7 +106,7 @@ useEffect(()=>{
       <div className="subject"  >
         <div className="img-div" ><img  className="card-img" src={item.bgimg}></img></div>
        <div className="card-title"><h3>{item.name}</h3>
-       <Link to="/OSmodules" ><button style={{backgroundColor:"rgb(83,189,175)"}}>View More</button></Link></div>
+       <a href="/OSmodules" ><button style={{backgroundColor:"rgb(83,189,175)"}}>View More</button></a></div>
       </div>))}
       </Router>
       </div>

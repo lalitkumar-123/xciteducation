@@ -10,6 +10,11 @@ import {Navbar, Container, Nav, NavDropdown} from "react-bootstrap"
 import '../Css/header.css'
 const headersData = [
   {
+    label: "Home",
+    href: "/",
+    icon: (<AccountCircleIcon fontSize="large"/>),
+  },
+  {
     label: "About Us",
     href: "/Aboutus",
     icon: (<HomeIcon fontSize="large"/>),
@@ -19,16 +24,16 @@ const headersData = [
     href: "/Service",
     icon: (<HomeIcon fontSize="large"/>),
   },
+  {
+    label: "Open Source Community",
+    href: "/OpenSource",
+    icon: (<HomeIcon fontSize="large"/>),
+  }
   // {
   //   label: "Careers",
   //   href: "/Careers",
   //   icon: (<HomeIcon fontSize="large"/>),
   // },
-  {
-    label: "Open Source Community",
-    href: "/OpenSource",
-    icon: (<HomeIcon fontSize="large"/>),
-  },
   // {
   //   label: "Affiliate Marketing",
   //   href: "/Marketing",
@@ -39,17 +44,11 @@ const headersData = [
   //   href: "/Internship",
   //   icon: (<HomeIcon fontSize="large"/>),
   // },
-  
   // {
   //   label: "Research Prospects",
   //   href: "/Research",
   //   icon: (<HomeIcon fontSize="large"/>),
   // },
-  {
-    label: "Login",
-    href: "/Login",
-    icon: (<AccountCircleIcon fontSize="large"/>),
-  }
 ];
 
 const useStyles = makeStyles(() => ({
@@ -225,7 +224,7 @@ export default function Header() {
   };
 
   const xciteduLogo = (
-    <Typography variant="h6" component="h1" className={logo}>
+    <Typography variant="h6" component="h1" className={logo} style={{marginTop:"10px"}}>
       XCITEDUCATION
     </Typography>
   );
