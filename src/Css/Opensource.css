@@ -269,13 +269,13 @@ a{
    padding: 10px;
    transition: all 1s;
 }
-.card-img
+.lower-block .card-img
 {
     width: 210px;
     height: 190px;   
     opacity: 1;
 }
-.card-title
+.lower-block .card-title
 {
     width: 210px;
     height: 190px;   
@@ -290,26 +290,26 @@ a{
     opacity: 0;
     transition: all 0.2s;
     }
-.card-title h3
+    .lower-block .card-title h3
 {
     color:white;
     text-align: center;
     
 }
-.card-title button
+.lower-block .card-title button
 {
    background-color: white;
    border-radius: 50px;
    
 }
-.img-div
+.lower-block .img-div
 {
     position: absolute;
     top:0;
     left:0;
     margin: 10px;
 }
-.card-title:hover
+.lower-block .card-title:hover
 {
     background-position: right bottom;
     opacity: 1;

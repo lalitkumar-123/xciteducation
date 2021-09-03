@@ -162,11 +162,11 @@ svg.MuiSvgIcon-root {
   width: 320px;
   height: 280px;
 }
-.carousel-control-prev-icon,
+/* .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-color: black;
-}
 
+} */
 .container.apply {
   background-color: #62d1c6;
   color: black;
@@ -300,12 +300,12 @@ svg.MuiSvgIcon-root {
     margin-right: 8px;
   }
 }
-form {
+.service-form {
   margin-left: auto;
   margin-right: auto;
 }
 @media (min-width: 767px) {
-  form {
+.service-form {
     margin-left: 100px;
   }
 }
