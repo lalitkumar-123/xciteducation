@@ -30,14 +30,14 @@ nav.navbar.nav-underline.solid.black.navbar-expand-lg.navbar-light.fixed-top
 {
     
     background-color: #0C7D81;
-    
+    margin-top: 5vh;
 }
  .m-5 .third-container.st
  {
     padding-bottom: 0;
  }
 .top-container{
-            margin: 0;
+            /* margin: 0; */
              background: url(xcitedu.png) no-repeat center center fixed; 
 background-size: 100% 100%;
 background-position: center;
@@ -55,7 +55,7 @@ background-position: center;
 
 .top-container h1{
             width: 100%;
-           
+            margin-top: 10vh;
             text-align: center;
             font-size: 2rem;
         }
