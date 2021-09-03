@@ -52,7 +52,7 @@ body html
     margin: 10px auto;
     
 }
-input[type=text]
+.SearchContainer input[type=text]
 {
 flex:0.75;
 width: 100%;
@@ -61,7 +61,7 @@ margin: 10px;
 background-color: white;border-bottom: 1px solid aquamarine;
 
 }
-input[type=text]:focus
+.SearchContainer input[type=text]:focus
 {
     border:1px solid aquamarine;
     background-color: white;
