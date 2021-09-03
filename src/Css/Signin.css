@@ -145,7 +145,7 @@ button.ghost:hover {
   margin-top: 2vh;
 }
 
-form {
+.sign-form {
   background-color: #fff;
   display: flex;
   align-items: center;
@@ -156,7 +156,7 @@ form {
   text-align: center;
 }
 
-input {
+.si{
   background-color: #eee;
   border: none;
   padding: 12px 15px;
@@ -165,7 +165,7 @@ input {
   font-family: inherit;
 }
 
-.container {
+.container.sc {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
@@ -378,7 +378,7 @@ input {
     margin: -20px 0 50px;
   }
 
-  .container {
+  .container.sc {
     width: 768px;
     max-width: 100%;
     height: 480px;
