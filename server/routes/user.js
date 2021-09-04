@@ -33,7 +33,7 @@ router.post('/login', passport.authenticate('local', {failureRedirect: '/login'}
     res.send({username: req.user.username}) 
 })
 
-router.get('/logout', (req, res) => {
+router.post('/logout', (req, res) => {
     req.logout();
     res.send("logged out")
 })

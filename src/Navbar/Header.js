@@ -4,6 +4,8 @@ import MenuIcon from "@material-ui/icons/Menu"
 import HomeIcon from '@material-ui/icons/Home'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle'
 import { Link as RouterLink } from "react-router-dom"
+import axios from "axios"
+import {useHistory} from 'react-router'
 
 import {Navbar, Container, Nav, NavDropdown} from "react-bootstrap"
 
@@ -95,6 +97,7 @@ const useStyles = makeStyles(() => ({
 
 export default function Header() {
   const { header, logo, menuButton, toolbar, drawerContainer } = useStyles();
+  const history = useHistory();
 
   const [state, setState] = useState({
     mobileView: false,
@@ -128,7 +131,15 @@ export default function Header() {
   },[localStorage.getItem('username') == null]);
 
 ////////////////////////////////////////////////////////////////////////////
-
+function logout(e) {
+  e.preventDefault();
+  axios.post("http://localhost:5000/logout")
+    .then(res => {
+      console.log(res);
+      localStorage.removeItem("username");
+      history.push("/");
+    })
+}
 //////////////////////////////////////////////////////////////////////////// 
 
   const displayDesktop = () => {
@@ -137,27 +148,7 @@ export default function Header() {
         {xciteduLogo}
         <div style={{marginTop: "-20px"}}>{getMenuButtons()}</div>
         {localStorage.getItem('username') != null ? 
-          // <Navbar variant="dark" bg="dark" expand="lg">
-          // <Container fluid>
-          //   <Navbar.Toggle aria-controls="navbar-dark-example" />
-          //   <Navbar.Collapse id="navbar-dark-example">
-          //     <Nav>
-          //       <NavDropdown
-          //         id="nav-dropdown-dark-example"
-          //         title="Dropdown"
-          //         menuVariant="dark"
-          //       >
-          //           <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-          //           <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-          //           <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-          //           <NavDropdown.Divider />
-          //           <NavDropdown.Item  style={{zIndex: 999}} href="#action/3.4">Separated link</NavDropdown.Item>
-          //         </NavDropdown>
-          //       </Nav>
-          //     </Navbar.Collapse>
-          //   </Container>
-          // </Navbar>
-          <AccountCircleIcon fontSize="large"/>
+          <AccountCircleIcon fontSize="large" onClick={(e)=>logout(e)}/>
          :
         <a href="/Login" style={{color: "white", fontFamily: "Open Sans, sans-serif",
         fontWeight: 400, size: "18px"}}>Login</a>}
