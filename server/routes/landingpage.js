@@ -37,8 +37,7 @@ router.post("/api/v1/submit/application", (req, res) => {
     jposition: req.body.jposition,
     imgUrl: imageUrl(req)
   });
-  application.save().catch((error)=> {res.send('-1' + error)});
-  res.send('1')
+  application.save().catch((error)=> {return res.send('-1' + error)}).then((data) => {res.send('1')});
 })
 
 router.get('/uploads/:folder/:file', (req,res) => {
@@ -48,15 +47,19 @@ router.get('/uploads/:folder/:file', (req,res) => {
 
 
 function imageUrl(req) {
+  console.log(req.body)
+  console.log(req.files)
+
   let File;
   let uploadPath;
 
    if (!req.files || Object.keys(req.files).length === 0) {
     
-    var fallbackurl = ""
+    var fallbackurl = "ydhyghghk"
     return fallbackurl
   }
 
+  
   File = req.files.cv;
   uploadPath = path.join(__dirname, '../') + 'assets/uploads/'+ req.body.fname + " " + req.body.lname  + " " + req.body.email + '/'  + File.name;
   returnuploadpath = '/uploads/'+ req.body.fname + " " + req.body.lname  + " " + req.body.email + '/'  + File.name
