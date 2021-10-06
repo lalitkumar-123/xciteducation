@@ -1,18 +1,13 @@
-import React, {useEffect} from 'react';
+import React, {useState,useEffect} from 'react';
 
 import { Link } from 'react-router-dom';
 import FadeIn from 'react-fade-in';
 import ScrollAnimation from 'react-animate-on-scroll';
 import "../Css/About.css";
 import "../Css/Navigation.css";
-import '../Css/responsive.css'
-import '../Css/bootstrap.css'
+
 import { makeStyles } from '@material-ui/core/styles';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
-import {GiTrophyCup} from 'react-icons/gi'
-import {AiOutlineSetting,AiOutlineClockCircle,AiOutlineHeart} from 'react-icons/ai';
-import {BiLaptop} from 'react-icons/bi'
-import {VscFeedback} from 'react-icons/vsc'
 import Card from '@material-ui/core/Card';
 import Grid from '@material-ui/core/Grid';
 import CardActions from '@material-ui/core/CardActions';
@@ -20,8 +15,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import Header from '../Navbar/Header'
-import Footer from './Footer'
+import axios from 'axios';
 
 
 
@@ -55,15 +49,30 @@ const useStyles = makeStyles((theme) => ({
 
 const classes = useStyles();
 const bull = <span className={classes.bullet}>•</span>;
-    
+
+const [posts,setPosts]=useState([]);
+
 useEffect(()=>{
 
   Aos.init({duration:2000});
+
+  axios
+  .get('http://localhost:5000/api/v1/teams')
+  .then(res => {
+
+    console.log(res)
+    setPosts(res.data)
+  })
+
+  .catch(err => {
+
+    console.log(err)
+  })
 },[])
 
     return (
         <div>  
-        <Header/>
+        
         <nav class="navbar nav-underline solid black navbar-expand-lg navbar-light fixed-top ">
         <div class="container-fluid">
         
@@ -127,7 +136,7 @@ useEffect(()=>{
 
                     
                     <div class="card-body">
-                      <h4 class="card-title">Mission</h4>
+                      <h4 ><strong>Mission</strong></h4>
                       <p class="card-text mt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
@@ -142,7 +151,7 @@ useEffect(()=>{
                   <div class="card ms ps">
                     
                     <div class="card-body">
-                      <h4 class="card-title">Vision</h4>
+                      <h4 ><strong>Vision</strong></h4>
                       <p class="card-text mt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
@@ -213,11 +222,11 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
       </div>
     </div>
   </div>
-  <button class="carousel-control-prev noHover" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next noHover" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
@@ -225,119 +234,6 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 </div>
 </section>
 </div>
-
-
-{/* <div>
-      <div class="m-5">
-            <section id="services" class="featured-services">
-            <div  data-aos="fade-up">
-                <div class="heading_container">
-                    <h3 class="headers_popular mb-5">
-                    SERVICES
-                    </h3>
-                </div>
-
-                <div class="section-title">
-                <h2>Services</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-                </div>
-
-                <div class="row mb-6">
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0 mx-6">
-                    <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon"><i><GiTrophyCup/></i></div>  
-                    <h4 class="title">Personality Development through Vocabulary</h4>
-                    <p class="description">It's important to enhance childs vocabulary so as to make his/her 
-                    personality filled with more confidence by making them more linguistic.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0 mx-6">
-                    <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-                    <div class="icon"><i><AiOutlineSetting/></i></div>
-                    <h4 class="title">Problem Solving Classes</h4>
-                    <p class="description">Levels are like stairs, you step on one stair successfully then 
-                    a new stair is their to take you to your goal. In the same way,the problems will be divided 
-                    into several levels, so that each one of you can differentiate between every question deeply.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0 mx-6">
-                    <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-                    <div class="icon"><i><BiLaptop/></i></div>
-                    <h4 class="title">Brainstroming</h4>
-                    <p class="description">Learning with fun is our goal and thus every weekend, you will be 
-                    having special brainstorming games, fancy puzzles, unsolved questions and a treasure box will be 
-                    waiting for you on your way.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                    <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-                    <div class="icon"><i><AiOutlineClockCircle/></i></div>
-                    <h4 class="title">Monthly Test</h4>
-                    <p class="description">Tests brings the best. Learn with us and test your learning by giving 
-                    monthly tests. No one can stop you from being the best. Perceptions made easy with us.</p>
-                    </div>
-                </div>
-
-                </div>
-
-                <div class="row">
-                
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0 mx-6">
-                    <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-                    <div class="icon"><i><AiOutlineClockCircle/></i></div>
-                    <h4 class="title">Monthly Test</h4>
-                    <p class="description">Tests brings the best. Learn with us and test your learning by giving 
-                    monthly tests. No one can stop you from being the best. Perceptions made easy with us.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0 mx-6">
-                    <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon"><i><AiOutlineHeart/></i></div>
-                    <h4 class="title">Online one-to-one learning</h4>
-                    <p class="description">If u face any problem in learning path, 
-                    then for sure you can contact the teachers personally. If still the problem 
-                    is not resolved, we can take your separate explanation classes. 
-                    </p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0 mx-6">
-                    <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-                    <div class="icon"><i><VscFeedback/></i></div>
-                    <h4 class="title">Feedback Function</h4>
-                    <p class="description">Every weekend a feedback form will be shared with the respective student, 
-                    and it's the responsibility of the parents as well as the students to fill that form and tell us 
-                    their experience. Each and every feedback is valuable for us.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                    <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-                    <div class="icon"><i class="fas fa-user-md"></i></div>
-                    <h4 class="title"><a href="">24 hrs.Specialist present (On call)</a></h4>
-                    <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                    <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-                    <div class="icon"><i class="fas fa-x-ray"></i></div>
-                    <h4 class="title"><a href="">Facility of X-Ray in OT, Casualty & in ward</a></h4>
-                    <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-                    </div>
-                </div>
-
-                </div>
-
-            </div>
-            </section>
-        </div>
-</div> */}
-
 
 <div data-aos="fade-up">
 
@@ -391,51 +287,31 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
         </h2>
 
 <div class="row">
-  <div class="col-sm-12 col-md-12 col-lg-4">
+{
+ posts.map( post => (
+<div class="col-sm-12 col-md-12 col-lg-4">
   
     <div class="tcard" >
-  <img  src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/06/06/15/Chris-Pratt.jpg?width=982&height=726&auto=webp&quality=75" class="card-img-top" alt=""/>
+  <img  src={post.imgUrl} alt=""/>
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    
+    <p class="card-text">{post.name} <br /> {post.designation}</p>
     <label>No more</label><br />
     <a href="#" class="btn btn-dark"><ArrowForwardIcon/></a>
   </div>
 </div>
 
   </div>
-  <div class="col-sm-12 col-md-12 col-lg-4">
   
-    <div class="tcard" >
-  <img  src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/06/06/15/Chris-Pratt.jpg?width=982&height=726&auto=webp&quality=75" class="card-img-top" alt=""/>
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <label>No more</label><br />
-    <a href="#" class="btn btn-dark"><ArrowForwardIcon/></a>
-  </div>
-</div>
-
-  </div>
-
-  <div class="col-sm-12 col-md-12 col-lg-4">
+ ))}
   
-    <div class="tcard" >
-  <img  src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/06/06/15/Chris-Pratt.jpg?width=982&height=726&auto=webp&quality=75" class="card-img-top" alt=""/>
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <label>No more</label><br />
-    <a href="#" class="btn btn-dark"><ArrowForwardIcon/></a>
-  </div>
-</div>
 
-  </div>
+  
 </div>
 </div>
 </section>
 </div>
-<Footer/>
+
         </div>
     );
 }
